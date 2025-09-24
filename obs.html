@@ -18,30 +18,41 @@
 <link rel="stylesheet" href="static/css/navbar.css">
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue custom-navbar">
   <div class="container-fluid">
-    <!-- Left Logo -->
     <a class="navbar-brand p-0 me-2" href="index.html">
       <img src="static/images/ewb_logo.png" alt="EWB Logo">
     </a>
 
-    <!-- SVCE Logo for Mobile (visible only on mobile) -->
     <a class="navbar-brand p-0 ms-auto d-lg-none" href="#">
       <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo" style="height:50px;">
     </a>
 
-    <!-- Hamburger Icon -->
-    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Collapsible Menu -->
     <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="obs.html">Office Bearers</a></li>
-        <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
 
+        <!-- Office Bearers Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" id="obsDropdown" role="button" 
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Office Bearers
+          </a>
+          <ul class="dropdown-menu transparent-dropdown" aria-labelledby="obsDropdown">
+            <li><a class="dropdown-item" href="#ob-2025">2025 - 2026</a></li>
+            <li><a class="dropdown-item" href="#ob-2024">2024 - 2025</a></li>
+            <li><a class="dropdown-item" href="#ob-2023">2023 - 2024</a></li>
+            <li><a class="dropdown-item" href="#ob-2022">2022 - 2023</a></li>
+            <li><a class="dropdown-item" href="#ob-2021">2021 - 2022</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Events
@@ -56,13 +67,13 @@
         </li>
       </ul>
 
-      <!-- Right Logo (visible only on large screens) -->
       <a class="navbar-brand p-0 ms-3 d-none d-lg-block" href="#">
         <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo">
       </a>
     </div>
   </div>
 </nav>
+
 
 
 <script>
@@ -577,8 +588,589 @@
         </div>
       </div>
     </div>
-    <!-- Repeat for all other members (Gayathri, Gokul, Palani, etc.) -->
-    <!-- Each one has the same flip structure: card-front (photo+name+role) and card-back (details) -->
+<!-- 2024-2025 -->
+ <div id="ob-2024" class="page-title text-center my-4">
+  <h1>OFFICE BEARERS</h1>
+  <h2>2024 - 2025</h2>
+</div>
+
+<div class="container">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Example Card: President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <!-- Front -->
+          <div class="card-front">
+            <img src="static/images/Rahul A.jpg" alt="President">
+            <h3>Rahul A</h3>
+            <p class="role">President</p>
+          </div>
+          <!-- Back -->
+          <div class="card-back">
+            <h3>Rahul A</h3>
+            <p class="role">President</p>
+            <p>ECE · IV year</p>
+            <p>LinkedIn: Rahul A</p>
+            <a href="https://www.linkedin.com/in/johndoe" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2024 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: Vice President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/Shruthi V.png" alt="Vice President">
+            <h3>Shruthi V</h3>
+            <p class="role">Vice President</p>
+          </div>
+          <div class="card-back">
+            <h3>Jane Smith</h3>
+            <p class="role">Vice President</p>
+            <p>BT · III year</p>
+            <p>LinkedIn: Shruthi V</p>
+            <a href="https://www.linkedin.com/in/janesmith" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2024 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: General Secretary -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/malini.jpg" alt="General Secretary">
+            <h3>Vempalli Malini</h3>
+            <p class="role">General Secretary</p>
+          </div>
+          <div class="card-back">
+            <h3>Vempalli Malini</h3>
+            <p class="role">General Secretary</p>
+            <p>ADS · III year</p>
+            <p>LinkedIn: Vempalli Malini</p>
+            <a href="https://www.linkedin.com/in/arunkumar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2024 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Example Card: Join Secretary -->
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="member-card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="static/images/srinidhi.jpg" alt="Join Secretary">
+        <h3>Srinidhi Varadharajan</h3>
+        <p class="role">Join Secretary</p>
+      </div>
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Srinidhi Varadharajan</h3>
+        <p class="role">Join Secretary</p>
+        <p>BT · II year</p>
+        <p>LinkedIn: Srinidhi Varadharajan</p>
+        <a href="https://www.linkedin.com/in/karthikm" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+           View Profile
+        </a>
+        <p>2024 - 2025</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Example Card: Treasurer -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/surya.jpg" alt="Treasurer">
+            <h3>Surya K</h3>
+            <p class="role">Treasurer</p>
+          </div>
+          <div class="card-back">
+            <h3>Surya K</h3>
+            <p class="role">Treasurer</p>
+            <p>ECE · II year</p>
+            <p>LinkedIn: Surya K</p>
+            <a href="https://www.linkedin.com/in/snehar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2024 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<!-- 2024-2025 -->
+<div id="ob-2023" class="page-title text-center my-4">
+  <h1>OFFICE BEARERS</h1>
+  <h2>2023 - 2024</h2>
+</div>
+
+<div class="container">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Example Card: President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <!-- Front -->
+          <div class="card-front">
+            <img src="static/images/Akshara.jpg" alt="President">
+            <h3>Akshara B S</h3>
+            <p class="role">President</p>
+          </div>
+          <!-- Back -->
+          <div class="card-back">
+            <h3>Akshara B S</h3>
+            <p class="role">President</p>
+            <p>BT · IV year</p>
+            <p>LinkedIn: Akshara B S</p>
+            <a href="https://www.linkedin.com/in/johndoe" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2023 - 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: Vice President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/Nithish.jpg" alt="Vice President">
+            <h3>Nithish Kumar V</h3>
+            <p class="role">Vice President</p>
+          </div>
+          <div class="card-back">
+            <h3>Nithish Kumar V</h3>
+            <p class="role">Vice President</p>
+            <p>ECE · III year</p>
+            <p>LinkedIn: Nithish Kumar V</p>
+            <a href="https://www.linkedin.com/in/janesmith" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2023 - 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: General Secretary -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/srivarshini.jpg" alt="General Secretary">
+            <h3>Srivarshini S</h3>
+            <p class="role">General Secretary</p>
+          </div>
+          <div class="card-back">
+            <h3>Srivarshini S</h3>
+            <p class="role">General Secretary</p>
+            <p>ECE · III year</p>
+            <p>LinkedIn: Srivarshini S</p>
+            <a href="https://www.linkedin.com/in/arunkumar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2023 - 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Example Card: Join Secretary -->
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="member-card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="static/images/sudhanan.png" alt="Join Secretary">
+        <h3>Madhusudhanan K</h3>
+        <p class="role">Join Secretary</p>
+      </div>
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Madhusudhanan K</h3>
+        <p class="role">Join Secretary</p>
+        <p>ECE · II year</p>
+        <p>Madhusudhanan K</p>
+        <a href="https://www.linkedin.com/in/karthikm" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+           View Profile
+        </a>
+        <p>2023 - 2024</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Example Card: Treasurer -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/Shruthi V.png" alt="Treasurer">
+            <h3>Shruthi V</h3>
+            <p class="role">Treasurer</p>
+          </div>
+          <div class="card-back">
+            <h3>Shruthi V</h3>
+            <p class="role">Treasurer</p>
+            <p>BT · II year</p>
+            <p>LinkedIn: Shruthi V</p>
+            <a href="https://www.linkedin.com/in/snehar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2023 - 2024</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+
+<!-- 2023-2024 -->
+<div id="ob-2022" class="page-title text-center my-4">
+  <h1>OFFICE BEARERS</h1>
+  <h2>2022 - 2023</h2>
+</div>
+
+<div class="container">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Example Card: President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <!-- Front -->
+          <div class="card-front">
+            <img src="static/images/abi.jpg" alt="President">
+            <h3>Abinaya B</h3>
+            <p class="role">President</p>
+          </div>
+          <!-- Back -->
+          <div class="card-back">
+            <h3>Abinaya B</h3>
+            <p class="role">President</p>
+            <p>BT · III year</p>
+            <p>LinkedIn: Abinaya B</p>
+            <a href="https://www.linkedin.com/in/johndoe" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2022 - 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: Vice President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/Akshara.jpg" alt="Vice President">
+            <h3>Akshara B S</h3>
+            <p class="role">Vice President</p>
+          </div>
+          <div class="card-back">
+            <h3>Akshara B S</h3>
+            <p class="role">Vice President</p>
+            <p>BT · III year</p>
+            <p>LinkedIn: Akshara B S</p>
+            <a href="https://www.linkedin.com/in/janesmith" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2022 - 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: General Secretary -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/juspin.jpg" alt="General Secretary">
+            <h3>Juspin Kiran Kumar</h3>
+            <p class="role">General Secretary</p>
+          </div>
+          <div class="card-back">
+            <h3>Juspin Kiran Kumar</h3>
+            <p class="role">General Secretary</p>
+            <p>ME · III year</p>
+            <p>LinkedIn: Juspin Kiran Kumar</p>
+            <a href="https://www.linkedin.com/in/arunkumar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2022 - 2023</p>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Example Card: Join Secretary -->
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="member-card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="static/images/ranjani.jpg" alt="Join Secretary">
+        <h3>Karthik M</h3>
+        <p class="role">Join Secretary</p>
+      </div>
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Ranjani R</h3>
+        <p class="role">Join Secretary</p>
+        <p>CHE · II year</p>
+        <p>LinkedIn: Ranjani R</p>
+        <a href="https://www.linkedin.com/in/karthikm" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+           View Profile
+        </a>
+        <p>2022 - 2023</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Example Card: Treasurer -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/navin.jpg" alt="Treasurer">
+            <h3>Navin Raj R S</h3>
+            <p class="role">Treasurer</p>
+          </div>
+          <div class="card-back">
+            <h3>Navin Raj R S</h3>
+            <p class="role">Treasurer</p>
+            <p>IT · III year</p>
+            <p>LinkedIn: Navin Raj R S/p>
+            <a href="https://www.linkedin.com/in/snehar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2024 - 2025</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+
+<!-- 2021-2022 -->
+<div id="ob-2021" class="page-title text-center my-4">
+  <h1>OFFICE BEARERS</h1>
+  <h2>2021 - 2022</h2>
+</div>
+
+<div class="container">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Example Card: President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <!-- Front -->
+          <div class="card-front">
+            <img src="static/images/sanjaiy.jpg" alt="President">
+            <h3>Sanjaiy N</h3>
+            <p class="role">President</p>
+          </div>
+          <!-- Back -->
+          <div class="card-back">
+            <h3>Sanjaiy N</h3>
+            <p class="role">President</p>
+            <p>CHE · IV year</p>
+            <p>LinkedIn: Sanjaiy N</p>
+            <a href="https://www.linkedin.com/in/johndoe" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2021 - 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: Vice President -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/abi.jpg" alt="Vice President">
+            <h3>Abinaya B</h3>
+            <p class="role">Vice President</p>
+          </div>
+          <div class="card-back">
+            <h3>Abinaya B</h3>
+            <p class="role">Vice President</p>
+            <p>EEE · III year</p>
+            <p>LinkedIn: Abinaya B</p>
+            <a href="https://www.linkedin.com/in/janesmith" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2021 - 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Example Card: General Secretary -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/haripriya.jpg" alt="General Secretary">
+            <h3>Hari Priya A S</h3>
+            <p class="role">General Secretary</p>
+          </div>
+          <div class="card-back">
+            <h3>Hari Priya A S</h3>
+            <p class="role">General Secretary</p>
+            <p>BT · III year</p>
+            <p>LinkedIn: Hari Priya A S</p>
+            <a href="https://www.linkedin.com/in/arunkumar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2021 - 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Example Card: Join Secretary -->
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="member-card">
+    <div class="card-inner">
+      <!-- Front -->
+      <div class="card-front">
+        <img src="static/images/Akshara.jpg" alt="Join Secretary">
+        <h3>Akshara B S</h3>
+        <p class="role">Join Secretary</p>
+      </div>
+      <!-- Back -->
+      <div class="card-back">
+        <h3>Akshara B S</h3>
+        <p class="role">Join Secretary</p>
+        <p>BT · II year</p>
+        <p>LinkedIn: Akshara B S</p>
+        <a href="https://www.linkedin.com/in/karthikm" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+           View Profile
+        </a>
+        <p>2021 - 2022</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Example Card: Treasurer -->
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="member-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="static/images/juspin.jpg" alt="Treasurer">
+            <h3>Juspin Kiran Kumar</h3>
+            <p class="role">Treasurer</p>
+          </div>
+          <div class="card-back">
+            <h3>Juspin Kiran Kumar</h3>
+            <p class="role">Treasurer</p>
+            <p>ME · II year</p>
+            <p>LinkedIn: Juspin Kiran Kumar</p>
+            <a href="https://www.linkedin.com/in/snehar" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               style="color:#eceef1; font-weight:bold; text-decoration:underline;">
+               View Profile
+            </a>
+            <p>2021 - 2022</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+
 
   </div>
 </div>
@@ -591,30 +1183,71 @@
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+document.addEventListener('DOMContentLoaded', function () {
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
-    // Clear all existing actives
-    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
-      .forEach(a => a.classList.remove('active'));
+  // Clear all existing actives
+  document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+    .forEach(a => a.classList.remove('active'));
 
-    // Mark exact-match nav link or dropdown item
-    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
-      .forEach(a => {
-        const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
-        if (href && href === path) a.classList.add('active');
+  // Mark exact-match nav link or dropdown item
+  document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+    .forEach(a => {
+      const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
+
+      if (href && href === path) {
+        a.classList.add('active');
+      }
+    });
+
+  // ✅ New: if current page is obs.html, mark Office Bearers toggle as active
+  if (path === 'obs.html') {
+    const obsToggle = document.getElementById('obsDropdown');
+    if (obsToggle) obsToggle.classList.add('active');
+  }
+
+  // Existing: If on any events page, also light up the Events toggle
+  const eventPages = [
+    'gallery.html','event1.html','event2.html','event3.html','event4.html',
+    'pastyear.html','pastyear2.html'
+  ];
+  if (eventPages.includes(path)) {
+    const eventsToggle = document.getElementById('eventsDropdown');
+    if (eventsToggle) eventsToggle.classList.add('active');
+  }
+});
+
+</script>
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top">
+  <i class="bi bi-arrow-up"></i>
+</button>
+
+<script>
+  // Smooth scroll for dropdown links
+  document.querySelectorAll('a[href^="#ob-"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
       });
-
-    // If on any events page, also light up the Events toggle
-    const eventPages = [
-      'gallery.html','event1.html','event2.html','event3.html','event4.html',
-      'pastyear.html','pastyear2.html'
-    ];
-    if (eventPages.includes(path)) {
-      const eventsToggle = document.getElementById('eventsDropdown');
-      if (eventsToggle) eventsToggle.classList.add('active');
-    }
+      // collapse navbar on mobile after click
+      document.querySelector('.navbar-collapse').classList.remove('show');
+    });
   });
+
+  // Scroll to Top Button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+  scrollTopBtn.onclick = function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 </script>
 
 

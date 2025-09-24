@@ -31,14 +31,20 @@
       margin-bottom: 30px;
     }
 
+    /* Card + Animations */
     .card {
       border: none;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 20px rgba(30,132,73,0.4); /* green shadow */
       height: 100%;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: transform 0.4s ease, opacity 0.4s ease;
     }
-    .card:hover { transform: translateY(-5px); }
+    .card.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .card img {
       width: 100%;
@@ -47,9 +53,18 @@
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
-    .card-body { padding: 15px; text-align: center; }
+    .card-body { padding: 15px; text-align: center; background:#fff; border-radius:0 0 10px 10px; }
     .card-title { font-weight: bold; color: #1e8449; }
     .card-subtitle { font-size: 0.85rem; color: #777; margin-bottom: 10px; }
+    .card-text { font-size: 0.95rem; color: #555; }
+
+    /* Hover / Tap Zoom */
+    .card:hover, .card:active {
+      transform: scale(1.03);
+    }
+    .card.reveal:hover, .card.reveal:active {
+      transform: scale(1.03) translateY(0);
+    }
 
     /* 🔥 Mobile Fix */
     @media (max-width: 768px) {
@@ -61,50 +76,42 @@
       .card-text { font-size: 0.85rem; text-align: justify; }
       .row.g-4 > div { flex: 0 0 100%; max-width: 100%; }  /* ✅ One card per row */
     }
-            .navbar-brand img {
-    background-color: transparent !important;
-}
-/* Keep SVCE logo exact aspect ratio */
-.svce-logo {
-  height: 50px;          /* control the size */
-  width: auto;           /* auto keeps natural aspect ratio */
-  object-fit: contain;   /* prevents stretching */
-}
-@media (max-width: 999px) {
-  .svce-logo {
-    height: 40px;   /* smaller but still keeps shape */
-    width: auto;
-  }
-}
-@media (min-width: 999px) {
-  .svce-logo {
-    max-height: 40px;  /* smaller in laptop view */
-  }
-}
+
+    .navbar-brand img {
+      background-color: transparent !important;
+    }
+    /* Keep SVCE logo exact aspect ratio */
+    .svce-logo {
+      height: 50px; width: auto; object-fit: contain;
+    }
+    @media (max-width: 999px) {
+      .svce-logo { height: 40px; width: auto; }
+    }
+    @media (min-width: 999px) {
+      .svce-logo { max-height: 40px; }
+    }
 
     /* Active link in navbar */
-.navbar .nav-link.active,
-.navbar .nav-link.show {
-    background: linear-gradient(90deg, #145a32 0%, #0b3d1f 100%) !important;
-    color: #fff !important;
-    font-weight: bold;
-    border-radius: 5px;
-}
+    .navbar .nav-link.active,
+    .navbar .nav-link.show {
+      background: linear-gradient(90deg, #145a32 0%, #0b3d1f 100%) !important;
+      color: #fff !important;
+      font-weight: bold;
+      border-radius: 5px;
+    }
 
-/* Active dropdown item */
-.dropdown-menu .dropdown-item.active,
-.dropdown-menu .dropdown-item:active {
-    background-color: #145a32 !important; /* dark green */
-    color: #fff !important;
-    font-weight: bold;
-}
-
-
-
+    /* Active dropdown item */
+    .dropdown-menu .dropdown-item.active,
+    .dropdown-menu .dropdown-item:active {
+      background-color: #145a32 !important;
+      color: #fff !important;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
 
+<link rel="stylesheet" href="static/css/navbar1.css">
 <link rel="stylesheet" href="static/css/navbar1.css">
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue custom-navbar">
@@ -170,7 +177,6 @@
   }
 </script>
 
-
   <!-- Gallery Section -->
   <section class="gallery-section">
     <div class="container">
@@ -178,10 +184,10 @@
       <h4 class="gallery-title">2024 - 2025</h4>
       <div class="row g-4">
 
-        <!-- Engineers Day -->
+        <!-- Engineers Day (auto reveal) -->
         <div class="col-12 col-md-6">
           <a href="static/pdfs/inaugration.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <div class="card">
+            <div class="card auto-reveal">
               <img src="static/images/egday24.png" alt="Engineers Day">
               <div class="card-body">
                 <div class="card-subtitle">15th Sep 2024</div>
@@ -262,18 +268,14 @@
   document.addEventListener('DOMContentLoaded', function () {
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
-    // Clear all existing actives
-    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
-      .forEach(a => a.classList.remove('active'));
-
-    // Mark exact-match nav link or dropdown item
+    // Navbar active state
     document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
       .forEach(a => {
+        a.classList.remove('active');
         const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
         if (href && href === path) a.classList.add('active');
       });
 
-    // If on any events page, also light up the Events toggle
     const eventPages = [
       'gallery.html','event1.html','event2.html','event3.html','event4.html',
       'pastyear.html','pastyear2.html'
@@ -282,7 +284,31 @@
       const eventsToggle = document.getElementById('eventsDropdown');
       if (eventsToggle) eventsToggle.classList.add('active');
     }
+
+    // Reveal animations
+    const cards = document.querySelectorAll('.card');
+    const firstCard = document.querySelector('.card.auto-reveal');
+    if (firstCard) {
+      setTimeout(() => firstCard.classList.add('reveal'), 300);
+    }
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+      let delay = 0;
+      cards.forEach(card => {
+        if (!card.classList.contains('auto-reveal') && !card.classList.contains('reveal')) {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < triggerBottom) {
+            setTimeout(() => card.classList.add('reveal'), delay);
+            delay += 150; // stagger
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
   });
-</script>
+  </script>
 </body>
 </html>

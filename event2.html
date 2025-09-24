@@ -33,20 +33,35 @@
     .gallery-title {
       text-align:center; font-weight:700; color:#1e8449; margin-bottom:30px;
     }
+
+    /* Cards */
     .card {
       border:none; border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow:0 6px 20px rgba(30,132,73,0.4); /* green shadow */
       height:100%;
+      opacity:0; 
+      transform:translateY(50px);
+      transition: transform 0.4s ease, opacity 0.4s ease;
     }
-    .card:hover { transform:translateY(-5px); }
+    .card.reveal {
+      opacity:1;
+      transform:translateY(0);
+    }
     .card img {
       width:100%; height:220px; object-fit:cover;
       border-top-left-radius:10px; border-top-right-radius:10px;
     }
-    .card-body { padding:15px; text-align:center; }
+    .card-body { padding:15px; text-align:center; background:#fff; border-radius:0 0 10px 10px; }
     .card-title { font-weight:bold; color:#1e8449; }
     .card-subtitle { font-size:0.85rem; color:#777; margin-bottom:10px; }
+
+    /* Hover / Tap Zoom */
+    .card:hover, .card:active {
+      transform: scale(1.03);
+    }
+    .card.reveal:hover, .card.reveal:active {
+      transform: scale(1.03) translateY(0);
+    }
 
     /* Mobile Fix */
     @media (max-width: 768px) {
@@ -56,47 +71,38 @@
       .card-body { padding:12px; }
       .card-title { font-size:1rem; }
       .card-text { font-size:0.85rem; text-align:justify; }
-      .row.g-4 > div { flex:0 0 100%; max-width:100%; } /* ✅ 1 card per row */
+      .row.g-4 > div { flex:0 0 100%; max-width:100%; } /* 1 card per row */
     }
-                .navbar-brand img {
-    background-color: transparent !important;
-}
-/* Keep SVCE logo exact aspect ratio */
-.svce-logo {
-  height: 50px;          /* control the size */
-  width: auto;           /* auto keeps natural aspect ratio */
-  object-fit: contain;   /* prevents stretching */
-}
-@media (max-width: 999px) {
-  .svce-logo {
-    height: 40px;   /* smaller but still keeps shape */
-    width: auto;
-  }
-}
-@media (min-width: 999px) {
-  .svce-logo {
-    max-height: 40px;  /* smaller in laptop view */
-  }
-}
+
+    /* SVCE Logo */
+    .svce-logo {
+      height: 50px;
+      width: auto;
+      object-fit: contain;
+    }
+    @media (max-width: 999px) {
+      .svce-logo { height: 40px; width: auto; }
+    }
+    @media (min-width: 999px) {
+      .svce-logo { max-height: 40px; }
+    }
 
     /* Active link in navbar */
-.navbar .nav-link.active,
-.navbar .nav-link.show {
-    background: linear-gradient(90deg, #145a32 0%, #0b3d1f 100%) !important;
-    color: #fff !important;
-    font-weight: bold;
-    border-radius: 5px;
-}
+    .navbar .nav-link.active,
+    .navbar .nav-link.show {
+      background: linear-gradient(90deg, #145a32 0%, #0b3d1f 100%) !important;
+      color: #fff !important;
+      font-weight: bold;
+      border-radius: 5px;
+    }
 
-/* Active dropdown item */
-.dropdown-menu .dropdown-item.active,
-.dropdown-menu .dropdown-item:active {
-    background-color: #145a32 !important; /* dark green */
-    color: #fff !important;
-    font-weight: bold;
-}
-
-
+    /* Active dropdown item */
+    .dropdown-menu .dropdown-item.active,
+    .dropdown-menu .dropdown-item:active {
+      background-color: #145a32 !important;
+      color: #fff !important;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -165,105 +171,117 @@
   }
 </script>
 
+<!-- Gallery Section -->
+<section class="gallery-section">
+  <div class="container">
+    <h2 class="gallery-title">EWB Events</h2>
+    <h4 class="gallery-title">2023 - 2024</h4>
+    <div class="row g-4">
 
-
-  <!-- Gallery Section -->
-  <section class="gallery-section">
-    <div class="container">
-      <h2 class="gallery-title">EWB Events</h2>
-      <h4 class="gallery-title">2023 - 2024</h4>
-      <div class="row g-4">
-
-        <!-- Guest Lecture -->
-        <div class="col-12 col-md-6">
-          <a href="static/pdfs/guestlecture23.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <div class="card">
-              <img src="static/images/guestlecture23.png" alt="Guest Lecture">
-              <div class="card-body">
-                <div class="card-subtitle">30th Apr 2024</div>
-                <h5 class="card-title">Guest Lecture</h5>
-                <p class="card-text">Online guest lecture on “Strategies for Mitigating Noise Pollution” by Mr. Ritesh Prasad Gurung, CPCB. Discussed health impacts, sustainable solutions, with 83 participants actively engaged.</p>
-              </div>
+      <!-- Guest Lecture (auto reveal) -->
+      <div class="col-12 col-md-6">
+        <a href="static/pdfs/guestlecture23.pdf" target="_blank" style="text-decoration:none; color:inherit;">
+          <div class="card auto-reveal">
+            <img src="static/images/guestlecture23.png" alt="Guest Lecture">
+            <div class="card-body">
+              <div class="card-subtitle">30th Apr 2024</div>
+              <h5 class="card-title">Guest Lecture</h5>
+              <p class="card-text">Online guest lecture on “Strategies for Mitigating Noise Pollution” by Mr. Ritesh Prasad Gurung, CPCB.</p>
             </div>
-          </a>
-        </div>
-
-        <!-- Infinitus 24 -->
-        <div class="col-12 col-md-6">
-          <a href="static/pdfs/infinitus24.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <div class="card">
-              <img src="static/images/Infinitus24.png" alt="Infinitus 24">
-              <div class="card-body">
-                <div class="card-subtitle">5th Feb 2024</div>
-                <h5 class="card-title">Infinitus '24</h5>
-                <p class="card-text">Flagship event with contests in cryptograms, debates, and stock market challenge. Students showcased creativity and problem-solving. Srimathi R won the Rolling Trophy.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- Inauguration 2023 -->
-        <div class="col-12 col-md-6">
-          <a href="static/pdfs/inaug23.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <div class="card">
-              <img src="static/images/inaug23.png" alt="Inauguration">
-              <div class="card-body">
-                <div class="card-subtitle">12th Oct 2023</div>
-                <h5 class="card-title">Inauguration Ceremony</h5>
-                <p class="card-text">The 2023–24 inauguration welcomed new members and outlined future plans under the motto “Ideate, Innovate, Implement.” 68 participants attended with Chief Guest Dr. R. Muthucumaraswamy.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <!-- ISRO Visit -->
-        <div class="col-12 col-md-6">
-          <a href="static/pdfs/isro.pdf" target="_blank" style="text-decoration:none; color:inherit;">
-            <div class="card">
-              <img src="static/images/isro.png" alt="ISRO Visit">
-              <div class="card-body">
-                <div class="card-subtitle">2nd Sep 2023</div>
-                <h5 class="card-title">ISRO Visit</h5>
-                <p class="card-text">Members witnessed the launch of Aditya-L1 at Sriharikota. 17 students attended, gaining insights into India’s space missions and rocket technology.</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
+          </div>
+        </a>
       </div>
+
+      <!-- Infinitus 24 -->
+      <div class="col-12 col-md-6">
+        <a href="static/pdfs/infinitus24.pdf" target="_blank" style="text-decoration:none; color:inherit;">
+          <div class="card">
+            <img src="static/images/Infinitus24.png" alt="Infinitus 24">
+            <div class="card-body">
+              <div class="card-subtitle">5th Feb 2024</div>
+              <h5 class="card-title">Infinitus '24</h5>
+              <p class="card-text">Flagship event with contests in cryptograms, debates, and stock market challenge.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Inauguration 2023 -->
+      <div class="col-12 col-md-6">
+        <a href="static/pdfs/inaug23.pdf" target="_blank" style="text-decoration:none; color:inherit;">
+          <div class="card">
+            <img src="static/images/inaug23.png" alt="Inauguration">
+            <div class="card-body">
+              <div class="card-subtitle">12th Oct 2023</div>
+              <h5 class="card-title">Inauguration Ceremony</h5>
+              <p class="card-text">The 2023–24 inauguration welcomed new members and outlined future plans under the motto “Ideate, Innovate, Implement.”</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- ISRO Visit -->
+      <div class="col-12 col-md-6">
+        <a href="static/pdfs/isro.pdf" target="_blank" style="text-decoration:none; color:inherit;">
+          <div class="card">
+            <img src="static/images/isro.png" alt="ISRO Visit">
+            <div class="card-body">
+              <div class="card-subtitle">2nd Sep 2023</div>
+              <h5 class="card-title">ISRO Visit</h5>
+              <p class="card-text">Members witnessed the launch of Aditya-L1 at Sriharikota. 17 students attended, gaining insights into India’s space missions.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-primary-blue text-white text-center p-3 mt-5">
-    © 2025 Engineers Without Borders - SVCE Student Chapter | All Rights Reserved
-  </footer>
+<!-- Footer -->
+<footer class="bg-primary-blue text-white text-center p-3 mt-5">
+  © 2025 Engineers Without Borders - SVCE Student Chapter | All Rights Reserved
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   <script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
-    // Clear all existing actives
-    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
-      .forEach(a => a.classList.remove('active'));
-
-    // Mark exact-match nav link or dropdown item
+    // Navbar active
     document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
       .forEach(a => {
+        a.classList.remove('active');
         const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
         if (href && href === path) a.classList.add('active');
       });
 
-    // If on any events page, also light up the Events toggle
-    const eventPages = [
-      'gallery.html','event1.html','event2.html','event3.html','event4.html',
-      'pastyear.html','pastyear2.html'
-    ];
+    const eventPages = ['gallery.html','event1.html','event2.html','event3.html','event4.html'];
     if (eventPages.includes(path)) {
       const eventsToggle = document.getElementById('eventsDropdown');
       if (eventsToggle) eventsToggle.classList.add('active');
     }
+
+    // Reveal animation
+    const cards = document.querySelectorAll('.card');
+    const firstCard = document.querySelector('.card.auto-reveal');
+    if (firstCard) {
+      setTimeout(() => firstCard.classList.add('reveal'), 300);
+    }
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.9;
+      cards.forEach(card => {
+        if (!card.classList.contains('auto-reveal')) {
+          const cardTop = card.getBoundingClientRect().top;
+          if (cardTop < triggerBottom) card.classList.add('reveal');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
   });
 </script>
 </body>
