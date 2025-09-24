@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildest Planets Blog | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9f9ff;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("static/images/planetbanner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+      color: #d18aff;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(60, 10, 90, 0.85);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #4b0173;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(130,0,180,0.25);
+    }
+    .blog-card h3 {
+      color: #7a1fbf;
+      margin-bottom: 15px;
+    }
+    .blog-img {
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 180px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Back button -->
+    <a href="blogs.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <h1>The Wildest Planets</h1>
+    <p class="lead">Strangest Worlds in the Milky Way</p>
+  </section>
+
+  <!-- Blog Content -->
+  <div class="container">
+
+    <!-- Planet 1 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>1. HD 189733B – Rains Glass Sideways</h3>
+        <p>Winds over <b>5,000 mph</b> hurl glass shards sideways, making it one of the most dangerous atmospheres ever detected.</p>
+        <img src="static/images/planet1.png" class="img-fluid blog-img" alt="HD 189733B">
+      </div>
+    </div>
+
+    <!-- Planet 2 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>2. 55 Cancri e – Possibly Made of Diamonds</h3>
+        <p>This carbon-rich planet might literally be a <b>giant diamond</b> under immense pressure—true cosmic luxury!</p>
+        <img src="static/images/planet2.png" class="img-fluid blog-img" alt="55 Cancri e">
+      </div>
+    </div>
+
+    <!-- Planet 3 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>3. WASP-12b – Absorbs Almost All Light</h3>
+        <p>Darker than asphalt, this planet swallows nearly all light, making it act like a <b>mini-black hole planet</b>.</p>
+        <img src="static/images/planet3.png" class="img-fluid blog-img" alt="WASP-12b">
+      </div>
+    </div>
+
+    <!-- Planet 4 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>4. Kepler-16b – Orbits Two Suns</h3>
+        <p>This planet orbits <b>two stars</b>, giving it double sunrises and sunsets—straight out of <i>Star Wars</i>.</p>
+        <img src="static/images/planet4.png" class="img-fluid blog-img" alt="Kepler-16b">
+      </div>
+    </div>
+
+    <!-- Planet 5 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>5. PSR B1620-26 b – 12.7 Billion Years Old</h3>
+        <p>Older than Earth itself, this ancient planet formed when the universe was still a baby—pure alien vibes!</p>
+        <img src="static/images/planet5.png" class="img-fluid blog-img" alt="PSR B1620-26 b">
+      </div>
+    </div>
+
+    <!-- Planet 6 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>6. HD 106906 b – Orbits Crazy Far Out</h3>
+        <p>This planet orbits so far from its star it’s barely bound—almost like a <b>rogue planet</b> doing its own thing.</p>
+        <img src="static/images/planet6.png" class="img-fluid blog-img" alt="HD 106906 b">
+      </div>
+    </div>
+
+    <!-- Planet 7 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>7. WASP-76b – Rains Molten Iron</h3>
+        <p>Extreme heat vaporizes iron, which later condenses and <b>rains down as molten metal</b>. Wild and fiery!</p>
+        <img src="static/images/planet7.png" class="img-fluid blog-img" alt="WASP-76b">
+      </div>
+    </div>
+
+    <!-- Planet 8 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>8. Gliese 436b – Has Burning Ice</h3>
+        <p>Water stays frozen solid even at scorching temperatures—gravity creates <b>burning ice</b>.</p>
+        <img src="static/images/planet8.png" class="img-fluid blog-img" alt="Gliese 436b">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3" style="background:#3a006b;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

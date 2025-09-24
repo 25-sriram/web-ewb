@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue custom-navbar">
+  <div class="container-fluid">
+    <!-- Left Logo -->
+    <a class="navbar-brand p-0 me-2" href="index.html">
+      <img src="static/images/ewb_logo.png" alt="EWB Logo">
+    </a>
+
+    <!-- Hamburger Icon -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Close Button (only visible on mobile) -->
+    <button class="btn-close position-absolute top-0 end-0 m-3 d-lg-none" 
+            type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-label="Close"></button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="obs.html">Office Bearers</a></li>
+        <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu transparent-dropdown" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="gallery.html">2025 - 2026</a></li>
+            <li><a class="dropdown-item" href="event1.html">2024 - 2025</a></li>
+            <li><a class="dropdown-item" href="event2.html">2023 - 2024</a></li>
+            <li><a class="dropdown-item" href="event3.html">2022 - 2023</a></li>
+            <li><a class="dropdown-item" href="event4.html">2021 - 2022</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right Logo -->
+      <a class="navbar-brand p-0 ms-3" href="#">
+        <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+  // Remove all active classes
+  document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+    .forEach(a => a.classList.remove('active'));
+
+  // Highlight the current link
+  document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+    .forEach(a => {
+      const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
+      if (href && href === path) {
+        a.classList.add('active');
+      }
+    });
+
+  // Highlight Events dropdown if current page is inside it
+  const eventPages = [
+    'gallery.html','event1.html','event2.html','event3.html','event4.html'
+  ];
+  if (eventPages.includes(path)) {
+    const eventsToggle = document.getElementById('eventsDropdown');
+    if (eventsToggle) eventsToggle.classList.add('active', 'show');
+
+    // Also force dropdown open
+    const dropdownMenu = eventsToggle.nextElementSibling;
+    if (dropdownMenu) dropdownMenu.classList.add('show');
+  }
+});
+</script>

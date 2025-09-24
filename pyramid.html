@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyramids Blog | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("static/images/pybanner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(20, 90, 50, 0.85);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #0d3d24;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,128,0,0.25);
+    }
+    .blog-card h3 {
+      color: #1e8449;
+      margin-bottom: 15px;
+    }
+    .blog-card ul {
+      padding-left: 18px;
+    }
+    .blog-card li {
+      margin-bottom: 8px;
+    }
+    .blog-img {
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 160px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Back button -->
+    <a href="blogs.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <h1>The Pyramids of Egypt</h1>
+    <p class="lead">Exploring the history, purpose, and legacy of Egypt’s pyramids</p>
+  </section>
+
+  <!-- Blog Content -->
+  <div class="container">
+
+    <!-- Inside the Pyramids -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Inside the Pyramids</h3>
+        <ul>
+          <li><b>Burial Chambers</b> – Held treasures for the afterlife.</li>
+          <li><b>Hieroglyphs & Inscriptions</b> – Depict pharaohs' lives and beliefs.</li>
+          <li><b>Air Shafts</b> – Originally thought ventilation, now seen as religious/astronomical significance.</li>
+        </ul>
+        <img src="static/images/inside.png" class="img-fluid blog-img" alt="Inside Pyramids">
+      </div>
+    </div>
+
+    <!-- Purpose -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Purpose</h3>
+        <ul>
+          <li>Built to protect pharaohs and their treasures for the afterlife.</li>
+          <li>Storage of sacred texts & inscriptions with spells & prayers.</li>
+          <li>Connection to the Sun God Ra – pyramid shape linked to worship of Ra.</li>
+        </ul>
+        <img src="static/images/purpose.png" class="img-fluid blog-img" alt="Purpose of Pyramids">
+      </div>
+    </div>
+
+    <!-- Tourism & Economy -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Tourism & Economy</h3>
+        <ul>
+          <li>Major tourist attraction generating billions in revenue.</li>
+          <li>Tourist numbers dropped from 14.7M (2010) to 3.5M (2020).</li>
+          <li>Tourism contributes significantly to Egypt’s GDP.</li>
+        </ul>
+        <img src="static/images/tourist.png" class="img-fluid blog-img" alt="Tourism Pyramids">
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Challenges Facing the Pyramids</h3>
+        <ul>
+          <li>Erosion & Pollution – weather and city damage stones.</li>
+          <li>Over-tourism – excessive visitors weaken structures.</li>
+          <li>Climate change – rising temperatures accelerate deterioration.</li>
+        </ul>
+        <img src="static/images/challenges.png" class="img-fluid blog-img" alt="Challenges of Pyramids">
+      </div>
+    </div>
+
+    <!-- Preservation -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Protection & Preservation</h3>
+        <ul>
+          <li>Egyptian laws on excavation & heritage preservation.</li>
+          <li>Structural reinforcement of weak sections.</li>
+          <li>Advanced monitoring – AI, laser scanning, remote sensing.</li>
+          <li>Security measures – surveillance and guards.</li>
+        </ul>
+        <img src="static/images/laws.png" class="img-fluid blog-img" alt="Preservation Measures">
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Conclusion</h3>
+        <p>The pyramids symbolize Egypt’s rich history and economy. Despite modern threats, preservation ensures their legacy continues for future generations.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3" style="background:#145a32;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

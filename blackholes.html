@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Holes Blog | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #0d0d0d;
+      color: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero */
+    .hero {
+      background: url("static/images/bhbanner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #1e1e1e;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #1a1a1a;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(255,255,255,0.2);
+    }
+    .blog-card h3 {
+      color: #ff4c4c;
+      margin-bottom: 15px;
+    }
+    .blog-card ul {
+      padding-left: 18px;
+    }
+    .blog-card li {
+      margin-bottom: 8px;
+    }
+    .blog-img {
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 160px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <a href="blogs.html" class="back-btn"><i class="bi bi-arrow-left"></i></a>
+    <h1>Black Holes</h1>
+    <p class="lead">The Mysterious Giants of Space</p>
+  </section>
+
+  <div class="container">
+
+    <!-- Introduction 1 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Introduction</h3>
+        <p>Have you ever imagined a place where gravity is so strong that nothing—not even light—can escape?</p>
+        <img src="static/images/bhbanner.png" class="img-fluid blog-img" alt="Introduction">
+      </div>
+    </div>
+
+    <!-- Introduction 2 -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>What is a Black Hole?</h3>
+        <p>These strange objects in space are full of mystery and power. They can stretch time, bend light, and even swallow stars. Learning about black holes helps us understand the extreme laws of physics and the universe better.</p>
+        <img src="static/images/whbh.png" class="img-fluid blog-img" alt="What is a Black Hole">
+      </div>
+    </div>
+
+    <!-- Formation -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Formation of a Black Hole</h3>
+        <p>A black hole forms when a massive star dies and collapses under its own gravity, creating a dense region in space where gravity pulls everything inward.</p>
+        <ul>
+          <li>Massive Star Existence → Star Death → Gravitational Collapse → Dense Region</li>
+        </ul>
+        <img src="static/images/formation.png" class="img-fluid blog-img" alt="Formation of Black Hole">
+      </div>
+    </div>
+
+    <!-- Structure -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Structure of a Black Hole</h3>
+        <ul>
+          <li><b>Invisible Power</b> – Inferred by influence on surrounding matter.</li>
+          <li><b>Event Horizon</b> – The boundary where escape is impossible.</li>
+          <li><b>Singularity</b> – The central point of infinite density and gravity.</li>
+        </ul>
+        <img src="static/images/bstructure.png" class="img-fluid blog-img" alt="Structure">
+      </div>
+    </div>
+
+    <!-- Facts -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Mind-Blowing Facts</h3>
+        <ul>
+          <li><b>Size Variability</b> – From tiny to supermassive.</li>
+          <li><b>Time Dilation</b> – Time slows near black holes.</li>
+          <li><b>Matter Ejection</b> – Jets of particles at high speeds.</li>
+          <li><b>Gravitational Waves</b> – Ripples in spacetime caused by collisions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Study -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>How Scientists Study Them</h3>
+        <ul>
+          <li>Imaging shadows with global telescope networks.</li>
+          <li>Watching star orbits for black hole presence.</li>
+          <li>X-ray telescopes detecting radiation from falling matter.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Falling -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>What Happens if You Fall into One?</h3>
+        <ul>
+          <li><b>External Observation</b> – You’d appear frozen near the event horizon.</li>
+          <li><b>Event Horizon Perception</b> – You’d stretch thin before reaching the center.</li>
+          <li><b>Spaghettification</b> – Gravity pulls stronger on your feet than your head.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="text-center p-3" style="background:#1a1a1a;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) r.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

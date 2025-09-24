@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineers Without Borders</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .bg-primary-blue {
+    background: linear-gradient(to right, 
+        #ffffff 0%,       /* Left white */
+        #1e8449 40%,      /* Middle green */
+        #ffffff 100%      /* Right white */
+    ) !important;
+}
+@media (max-width: 991px) {
+  .mobile-menu {
+    background: linear-gradient(to right, 
+        #ffffff 0%,       /* Left white */
+        #1e8449 40%,      /* Middle green */
+        #ffffff 100%   )  ;  /* dark overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;    /* full height */
+    padding-top: 80px;
+    text-align: center;
+    z-index: 1050;
+  }
+  /* Change hamburger icon to black */
+
+
+
+  .mobile-menu ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mobile-menu .nav-link {
+    font-size: 1.3rem;
+    color: #0fe6a1 !important; /* teal like screenshot */
+    background: none !important;
+  }
+
+  .mobile-menu .nav-link.active {
+    color: #fff !important;
+    font-weight: bold;
+  }
+
+    .navbar-toggler {
+    border: none;
+    z-index: 1100;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+}
+
+
+    .navbar .nav-link {
+        color: white !important;
+        position: relative;
+        padding: 8px 15px;
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(30,132,73,0.7) 100%);
+        background-size: 200% auto;
+        border-radius: 5px;
+        transition: background-position 0.4s ease, color 0.4s ease;
+    }
+    .dropdown-menu {
+  background: #fff; 
+  border-radius: 6px;
+  z-index: 2000; 
+}
+
+.dropdown-item {
+  color: #1e8449; /* green links */
+}
+.dropdown-item:hover {
+  background: #1e8449;
+  color: #fff;
+}
+
+
+    .navbar .nav-link:hover {
+        background-position: right center;
+        color: #fff !important;
+    }
+
+    .navbar .nav-link.active {
+        background: linear-gradient(90deg, #1e8449 0%, #145a32 100%);
+        background-size: 200% auto;
+        color: #fff !important;
+    }
+
+    .custom-navbar .navbar-brand img {
+        height: 70px;
+        width: auto;
+    }
+
+.carousel-img {
+  height: 500px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .carousel-img {
+    height: 300px; /* smaller on mobile */
+  }
+}
+
+
+    .carousel-caption {
+        background-color: rgba(30, 132, 73, 0.7);
+        border-radius: 5px;
+        padding: 20px;
+        bottom: 50px;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    .welcome-section {
+        background:linear-gradient(to right, #eef4f2 0%, #f6f7f6 100%); 
+        padding: 60px 0;
+    }
+
+    .welcome-heading {
+        color: #1e8449;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .welcome-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #333;
+    }
+
+    .content-section {
+        padding: 60px 0;
+        background-color: #fff;
+    }
+
+    .content-heading {
+        color: #1e8449;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+
+.contact-section {
+    background: linear-gradient(to right, #0b3d2e7e 0%, #1e844977 100%),url("static/images/contact.jpg");
+    color: white;
+    background-size: cover;
+    padding: 60px 0;
+}
+
+
+    .contact-section h2 {
+        color: #f6faf8;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    .contact-icons a {
+        font-size: 1.8rem;
+        margin: 0 10px;
+        color: #f3f3f3;
+        transition: color 0.3s ease-in-out;
+    }
+    .contact-icons a:hover {
+        color: #07ed03;
+    }
+    .navbar-brand img {
+        background-color: transparent !important;
+    }
+    .ewb-logo {
+    height: 110px;   /* adjust size */
+    width: auto;
+
+  
+
+}
+
+/* Keep SVCE logo exact aspect ratio */
+.svce-logo {
+  height: 50px;          /* control the size */
+  width: auto;           /* auto keeps natural aspect ratio */
+  object-fit: contain;   /* prevents stretching */
+}
+@media (max-width: 999px) {
+  .svce-logo {
+    height: 40px;   /* smaller but still keeps shape */
+    width: auto;
+  }
+}
+/* Reduce size for larger screens (desktop/laptop) */
+@media (min-width: 999px) {
+  .svce-logo {
+    max-height: 40px;  /* smaller in laptop view */
+  }
+}
+
+.stats-section {
+  background: 
+    linear-gradient(to right, rgba(11, 61, 46, 0.7), rgba(30, 132, 73, 0.7)), 
+    url("static/images/contact.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.stat-card {
+  background: rgb(246, 245, 245); /* very light grey card */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.stat-card i {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+.stat-card h3 {
+  color: #000; /* black text for white background */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #555; /* dark grey for better contrast */
+  margin-bottom: 0;
+}
+
+  .custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+.custom-navbar .navbar-toggler {
+  border: none;      /* optional: remove border */
+  background: none;  /* keep background transparent */
+}
+
+.advisory-section {
+  padding: 60px 0;
+  background:linear-gradient(to right, #eef4f2 0%, #f6f7f6 100%); 
+}
+
+.advisory-section h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #1e8449;
+  margin-bottom: 40px;
+}
+
+.advisory-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.advisory-card img {
+  width: 100%;              /* make image fill its column */
+  max-width: 300px;         /* increase max size */
+  height: 300px;             /* keep aspect ratio */
+  border-radius: 15px;      /* smoother rounded corners */
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.advisory-card h5 {
+  font-weight: bold;
+  color: #000;
+  margin-top: 10px;
+}
+
+.advisory-card p {
+  margin: 0;
+  color: #333;
+}
+
+
+/* --- Responsive Fixes for Welcome Section --- */
+@media (max-width: 768px) {
+  .welcome-heading {
+    font-size: 1.6rem;
+  }
+
+  .welcome-text {
+    font-size: 0.95rem;
+  }
+
+  .ewb-logo {
+    height: 70px;
+  }
+
+  .d-flex.gap-4 {
+    gap: 1rem !important; /* reduce spacing between logos */
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-heading {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .welcome-text {
+    font-size: 0.9rem;
+    text-align: justify; /* smoother text flow */
+  }
+
+  .ewb-logo {
+    height: 60px;
+  }
+
+  /* Stack logos vertically on very small screens */
+  .d-flex.justify-content-center {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-section p {
+    font-size: 0.95rem;
+  }
+
+  iframe {
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 10px;
+    text-align: center;
+  }
+
+  .contact-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-section p {
+    font-size: 0.9rem;
+  }
+
+  iframe {
+    height: 220px;
+  }
+
+  .contact-icons a {
+    font-size: 1.5rem;
+    margin: 0 8px;
+  }
+}
+
+/* --- Responsive Fixes for Advisory Section --- */
+@media (max-width: 768px) {
+  .advisory-card img {
+    max-width: 220px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .advisory-card img {
+    max-width: 180px;
+    height: auto;
+  }
+
+  .advisory-card h5 {
+    font-size: 1rem;
+  }
+
+  .advisory-card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+</style>
+
+</head>
+<body>
+  
+     <!-- Bootstrap JS (must come before your script) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Your custom dropdown fix script -->
+   
+    <!-- Navbar -->
+<link rel="stylesheet" href="static/css/navbar.css">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue custom-navbar">
+  <div class="container-fluid">
+    <!-- Left Logo -->
+    <a class="navbar-brand p-0 me-2" href="index.html">
+      <img src="static/images/ewb_logo.png" alt="EWB Logo">
+    </a>
+
+        <!-- SVCE Logo for Mobile (visible only on mobile) -->
+    <a class="navbar-brand p-0 ms-auto d-lg-none" href="#">
+      <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo" style="height:50px;">
+    </a>
+
+
+    <!-- Hamburger Icon -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="obs.html">Office Bearers</a></li>
+        <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Events
+          </a>
+          <ul class="dropdown-menu transparent-dropdown" aria-labelledby="eventsDropdown">
+            <li><a class="dropdown-item" href="gallery.html">2025 - 2026</a></li>
+            <li><a class="dropdown-item" href="event1.html">2024 - 2025</a></li>
+            <li><a class="dropdown-item" href="event2.html">2023 - 2024</a></li>
+            <li><a class="dropdown-item" href="event3.html">2022 - 2023</a></li>
+            <li><a class="dropdown-item" href="event4.html">2021 - 2022</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right Logo (visible only on large screens) -->
+      <a class="navbar-brand p-0 ms-3 d-none d-lg-block" href="#">
+        <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Function to toggle the navbar
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbarNav');
+    const isExpanded = navbar.classList.contains('show');
+    
+    // Toggle the class 'show' to open/close the navbar
+    if (isExpanded) {
+      navbar.classList.remove('show');
+    } else {
+      navbar.classList.add('show');
+    }
+  }
+</script>
+
+    <!-- Carousel Section -->
+    <div id="ewbCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#ewbCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#ewbCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#ewbCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#ewbCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#ewbCarousel" data-bs-slide-to="4"></button>
+        </div>
+        
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="static/images/inaug.jpg" class="d-block w-100 carousel-img" alt="Community Project">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Inaugration Ceremony</h3>
+                    <h6>Core Team</h6>
+                    <p>This inauguration is not just an opening it’s the birth of ideas, friendships, and endless opportunities</p>
+    
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="static/images/nargunam.jpg" class="d-block w-100 carousel-img" alt="Team Collaboration">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Chief Guest Lecture</h3>
+                    <h5>Mr S.Nargunam</h5>
+                    <h6>Founder & Managind Director,Excel die castings,Thirumudivakkam</h6>
+            
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="static/images/ewb_logo.png" class="d-block w-100 carousel-img" alt="Education Program">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Education Programs</h3>
+                    <p>Teaching sustainable engineering practices to communities in need.</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="carousel-item">
+                <img src="static/images/ewb_logo.png" class="d-block w-100 carousel-img" alt="Infrastructure Project">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Infrastructure Development</h3>
+                    <p>Building resilient infrastructure in underserved areas around the world.</p>
+                </div>
+            </div>
+            
+            <!-- Slide 5 -->
+            <div class="carousel-item">
+                <img src="static/images/ewb_logo.png" class="d-block w-100 carousel-img" alt="Global Impact">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Global Impact</h3>
+                    <p>Making a difference through engineering solutions across continents.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#ewbCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#ewbCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="welcome-heading">Welcome to Engineers Without Borders - SVCE Student Chapter</h2>
+                   <div class="d-flex justify-content-center align-items-center gap-4 my-3">
+  <!-- Existing EWB India Logo -->
+  <img src="static/images/india_logo.png" alt="EWB India Logo" class="ewb-logo">
+
+  <!-- New EWB SVCE Logo (place your SVCE logo file in static/images/) -->
+  <img src="static/images/ewb_logo.png" alt="EWB SVCE Logo" class="ewb-logo">
+</div>
+
+                    <p> We are Working under Engineers Without Borders India Chapter</p>
+                    <p class="welcome-text">
+                        We are a community of engineering students dedicated to designing and implementing sustainable 
+                        solutions for communities in need. Through our projects, we aim to address global challenges 
+                        while developing our skills as socially responsible engineers.
+                    </p>
+                    <p class="welcome-text">
+                        Join us in our mission to create a more equitable and sustainable world through engineering 
+                        innovation and collaboration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Advisory Committee Section -->
+<section class="advisory-section">
+  <div class="container">
+    <h2>EWB-SVCE Advisory Committee</h2>
+    <div class="row justify-content-center">
+      
+      <!-- Dr. Ganesh Vaidyanathan -->
+      <div class="col-md-5 advisory-card">
+        <img src="static/images/princ.png" alt="Dr. S. Ganesh Vaidyanathan">
+        <h5>Dr. S. Ganesh Vaidyanathan</h5>
+        <p>Principal - Sri Venkateswara College of Engineering</p>
+      </div>
+
+      <!-- Dr. R. Palani -->
+      <div class="col-md-5 advisory-card">
+        <img src="static/images/sps.png" alt="Dr. ">
+        <h5>Mr.S P Sivagnana Subramanian</h5>
+        <p>Faculty Co-ordinator | Assistant Professor,<br> Department of Electical And Electronics Engineering, SVCE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- STATS SECTION -->
+<section class="stats-section py-5">
+  <div class="container">
+    <div class="row text-center">
+      
+      <div class="col-6 col-md-3 mb-4">
+        <div class="stat-card">
+          <i class="bi bi-calendar3"></i>
+          <h3>2018</h3>
+          <p>Founded</p>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-3 mb-4">
+        <div class="stat-card">
+          <i class="bi bi-people"></i>
+          <h3>170+</h3>
+          <p>Active Members</p>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-3 mb-4">
+        <div class="stat-card">
+          <i class="bi bi-award"></i>
+          <h3>80+</h3>
+          <p>Events Hosted</p>
+        </div>
+      </div>
+      
+      <div class="col-6 col-md-3 mb-4">
+        <div class="stat-card">
+          <i class="bi bi-globe"></i>
+          <h3>SVCE</h3>
+          <p>College</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ABOUT & MISSION SECTION -->
+<section style="background: linear-gradient(to right, #eef4f2 0%, #f6f7f6 100%); color: rgb(4, 165, 44); padding: 60px 0;">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            
+            <!-- About Us -->
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold mb-3">ABOUT US</h5>
+                <p style="color:#0a0a0a;">
+                    Engineers Without Borders (EWB) is a global network of non-profit organizations that unite engineers, professionals, and students to address critical challenges. They apply engineering expertise to improve living conditions in underserved communities.
+            </div>
+
+            <!-- Mission & Vision -->
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold mb-3">MISSION </h5>
+                <p style="color:#101010; margin-bottom:10px;">
+                    <strong>Mission:</strong> The mission of Engineers Without Borders (EWB) at SVCE is to utilize engineering as a catalyst for positive and sustainable global change. Our multifaceted mission includes community-centric engineering, education, and skill development, fostering global citizenship, promoting innovation and research, and actively seeking collaboration and partnerships.
+
+                </p>
+                
+            </div>
+            <div class="col-md-4 mb-4">
+               <h5 class="fw-bold mb-3">VISION</h5>
+              <p style="color:#030303;">
+                    <strong>Vision:</strong> We envision a future where engineering is a force for positive change, empowering communities, fostering cross-cultural understanding, and addressing the most critical issues facing humanity. Through education, collaboration, and ethical engineering practices, we strive to build a network of socially responsible engineers dedicated to improving the well-being of people around the globe.
+                </p>
+            </div>
+            <!-- Quick Links -->
+            
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="text-center">Contact Us</h2>
+            <div class="row align-items-center">
+                <!-- Google Map -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                   <iframe
+  src="https://www.google.com/maps?hl=en&ll=12.986576,79.975282&q=Sri%20Venkateswara%20College%20of%20Engineering%2C%20Pennalur%2C%20Sriperumbudur%20602117%20(SVCE)&z=16&output=embed"
+  width="100%"
+  height="350"
+  style="border:0;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+                </div>
+                <!-- Contact Details -->
+                <div class="col-md-6">
+                    <p><i class="bi bi-geo-alt-fill"></i> Sri Venkateswara College of Engineering, Sriperumbudur, Tamil Nadu - 602117</p>
+                    <p><i class="bi bi-telephone-fill"></i>+91 94441 23626</p>
+                    <p><i class="bi bi-envelope-fill"></i> <a href="mailto:ewb@svce.ac.in" style="text-decoration:none; color:#eff2f0;">ewb@svce.ac.in</a></p>
+                    <div class="contact-icons">
+                        <a href="https://www.instagram.com/ewbsvce?igsh=ZHlxb29vNG4xZ2t1" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ewbsvce" target="_blank"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <footer class="bg-primary-blue text-white text-center p-3">
+        © 2025 Engineers Without Borders - SVCE Student Chapter | All Rights Reserved
+    </footer>
+>
+    
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+    // Clear all existing actives
+    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+      .forEach(a => a.classList.remove('active'));
+
+    // Mark exact-match nav link or dropdown item
+    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+      .forEach(a => {
+        const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
+        if (href && href === path) a.classList.add('active');
+      });
+
+    // If on any events page, also light up the Events toggle
+    const eventPages = [
+      'gallery.html','event1.html','event2.html','event3.html','event4.html',
+      'pastyear.html','pastyear2.html'
+    ];
+    if (eventPages.includes(path)) {
+      const eventsToggle = document.getElementById('eventsDropdown');
+      if (eventsToggle) eventsToggle.classList.add('active');
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electricity from Thin Air | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("static/images/ebanner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(20, 90, 50, 0.85);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #0d3d24;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,128,0,0.25);
+    }
+    .blog-card h3 {
+      color: #1e8449;
+      margin-bottom: 15px;
+    }
+    .blog-card ul {
+      padding-left: 18px;
+    }
+    .blog-card li {
+      margin-bottom: 8px;
+    }
+    .blog-img {
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 160px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Back button -->
+    <a href="blogs.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <h1>Electricity from Thin Air</h1>
+    <p class="lead">UMass Amherst's Groundbreaking Discovery</p>
+  </section>
+
+  <!-- Blog Content -->
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>What If the Air Around Us Could Power Our Devices?</h3>
+        <p>Imagine a world where the air itself could charge our phones, laptops, and gadgets. That’s the vision behind UMass Amherst’s discovery of electricity from humidity.</p>
+        <img src="static/images/ebanner.png" class="img-fluid blog-img" alt="Intro AirGen">
+      </div>
+    </div>
+
+    <!-- Research Discovery -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>The Breakthrough</h3>
+        <p>Researchers at UMass Amherst have created a new material that generates electricity from humidity in the air—ushering in a new era of clean energy.</p>
+      </div>
+    </div>
+
+    <!-- What is Air-Generated Electricity -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>What is Air-Generated Electricity?</h3>
+        <p>Air-generated electricity (or “Hygro-Electricity”) involves producing current from moisture in the air. The process works as follows:</p>
+        <ul>
+          <li>Recognizes the presence of humidity in the air</li>
+          <li>Water molecules move through nanopores</li>
+          <li>Creates charge imbalance as molecules pass</li>
+          <li>Generates steady current flow</li>
+        </ul>
+        <img src="static/images/eprocess.png" class="img-fluid blog-img" alt="Process">
+      </div>
+    </div>
+
+    <!-- Highlights -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Key Highlights</h3>
+        <ul>
+          <li><b>Sustainable & Eco-Friendly</b> – Uses natural resources without pollution.</li>
+          <li><b>Continuous Power</b> – Generates electricity 24/7 without external input.</li>
+          <li><b>Versatile Adaptation</b> – Works across various climates and environments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Applications -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Potential Applications</h3>
+        <ul>
+          <li><b>Sustainable Infrastructure</b> – Buildings generating power from air.</li>
+          <li><b>Portable Electronics</b> – Devices that never need plugging in.</li>
+          <li><b>Wearable Devices</b> – Clothing generating electricity.</li>
+          <li><b>Remote Sensors</b> – Powering devices in isolated environments.</li>
+        </ul>
+        <img src="static/images/eapplication.png" class="img-fluid blog-img" alt="Applications">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3" style="background:#145a32;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

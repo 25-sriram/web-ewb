@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Air Charge Blog | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("static/images/mintro.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(20, 90, 50, 0.85);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #0d3d24;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,128,0,0.25);
+    }
+    .blog-card h3 {
+      color: #1e8449;
+      margin-bottom: 15px;
+    }
+    .blog-card ul {
+      padding-left: 18px;
+    }
+    .blog-card li {
+      margin-bottom: 8px;
+    }
+    .blog-img {
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 160px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Back button -->
+    <a href="blogs.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <h1>Mi Air Charge</h1>
+    <p class="lead">The future of wireless charging – will it change?</p>
+  </section>
+
+  <!-- Blog Content -->
+  <div class="container">
+
+    <!-- Introduction -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Introduction</h3>
+        <p>Charging technology has improved from <b>plug-in chargers</b> to <b>wireless pads</b>. Xiaomi’s Mi Air Charge goes further by enabling charging <b>through the air</b>, removing the need for cables and pads. Though still in development, Mi Air Charge could change the future of electronics.</p>
+        <img src="static/images/mintro.png" class="img-fluid blog-img" alt="Introduction">
+      </div>
+    </div>
+
+    <!-- How it Works -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>How Mi Air Charge Works</h3>
+        <ul>
+          <li><b>5W Wireless Charging:</b> Can send 5W of power to multiple devices over a few meters.</li>
+          <li><b>Antenna System:</b> 144-antenna system tracks the exact location of the smartphone.</li>
+          <li><b>Focused Energy Transmission:</b> The receiver converts signals into electricity using 14 antennas.</li>
+        </ul>
+        <img src="static/images/mwork.png" class="img-fluid blog-img" alt="How it works">
+      </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Benefits of Mi Air Charge</h3>
+        <ul>
+          <li>Completely wireless – no need for cables, pads, or docks.</li>
+          <li>Charge multiple devices at the same time without slowing down.</li>
+          <li>More convenience – charge while moving around.</li>
+          <li>Smart home use – could power devices, trackers, and appliances.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Possible Uses -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Possible Uses</h3>
+        <ul>
+          <li>Phones & Smartwatches always stay charged.</li>
+          <li>Medical equipment like pacemakers charge wirelessly.</li>
+          <li>Electric cars could charge in garages without plugging in.</li>
+          <li>Home gadgets – TVs, speakers, smart lights without cables.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Challenges & Problems</h3>
+        <ul>
+          <li>Low power output (5W), slower than wired charging.</li>
+          <li>Limited range – power weakens as distance increases.</li>
+          <li>Health concerns – long-term exposure to energy signals.</li>
+          <li>Government regulations on safety might restrict usage.</li>
+          <li>Expensive & hard to set up on a large scale.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Availability -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>When Will It Be Available?</h3>
+        <ul>
+          <li>Introduced in 2021 but not yet available for sale.</li>
+          <li>Xiaomi still improving & filing patents.</li>
+          <li>Not ready for the market – still in testing phase.</li>
+          <li>Regulations & safety approvals pending.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Competitors -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Competitors & Future Possibilities</h3>
+        <ul>
+          <li>Samsung & Apple working on similar charging methods.</li>
+          <li>Companies like Energous (WattUp) & Ossia (Cota) working on long-distance charging.</li>
+          <li>Future: By 2030, charging devices from a distance may replace traditional methods.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3" style="background:#145a32;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

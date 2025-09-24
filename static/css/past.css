@@ -1,0 +1,148 @@
+/* Background and base style */
+body {
+  background: url("../images/bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+/* Page Titles */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.page-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.page-title h2 {
+  font-size: 1.4rem;
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+/* First row (2 members) */
+.members-grid.first-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+}
+.members-grid.first-row .member-card {
+  width: 350px;
+  flex: 0 0 350px;
+  max-width: 350px;
+}
+
+/* Second row (3 members side by side – SriVarshini, Madhusudhanan, Shruthi) */
+.members-grid.second-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0 auto 30px auto;
+  max-width: 1200px;
+}
+.members-grid.second-row .member-card {
+  width: 350px;
+  height: 250px;
+  flex: 0 0 350px;
+}
+
+/* Default grid (3 per row for the rest) */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Member card styles */
+.member-card {
+  width: 350px;
+  height: 250px;
+  display: flex;
+  background-color: aliceblue;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 0;
+}
+.member-card img {
+  width: 150px;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.member-card .info {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.member-card .info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Details row (department + year) */
+.member-card .info .details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #00040b;
+  margin-top: 6px;
+}
+.member-card .info .details i {
+  font-size: 14px;
+  color: #00040c;
+  margin-right: 4px;
+}
+
+/* Quotes and year */
+.member-card .info .quote {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 5px 0;
+}
+.member-card .info .year {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Special single-center row (Faculty Advisor) */
+.members-grid.single-center {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 30px auto;
+}
+
+/* Wide faculty card */
+.member-card.wide-card {
+  width: 500px;
+  height: auto;
+}
+.member-card.wide-card img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+.member-card.wide-card .info {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Ensure last card in a grid centers */
+.members-grid .member-card:last-child {
+  justify-self: center;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photonic Computing Blog | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("static/images/pbanner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(20, 90, 50, 0.85);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #0d3d24;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,128,0,0.25);
+    }
+    .blog-card h3 {
+      color: #1e8449;
+      margin-bottom: 15px;
+    }
+    .blog-card ul {
+      padding-left: 18px;
+    }
+    .blog-card li {
+      margin-bottom: 8px;
+    }
+    .blog-img {
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 160px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Back button -->
+    <a href="blogs.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <h1>Photonic Computing & Optical Chips</h1>
+    <p class="lead">The Future of Faster, Greener Computers</p>
+  </section>
+
+  <!-- Blog Content -->
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Introduction</h3>
+        <p>Today’s computers are reaching their limits in speed and efficiency. Photonic computing and optical chips offer a new way forward by using <b>light instead of electricity</b>. This could make computers much faster and use less energy, transforming industries worldwide.</p>
+        <img src="static/images/pintro.png" class="img-fluid blog-img" alt="Intro">
+      </div>
+    </div>
+
+    <!-- How It Works -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>How Photonic Computing Works</h3>
+        <ul>
+          <li><b>Faster Data Transfer</b> – Light enables rapid communication within computer components.</li>
+          <li><b>Optical Pathways</b> – Tiny light channels replace traditional wires.</li>
+          <li><b>Advanced Calculations</b> – Light properties boost problem-solving efficiency.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Benefits -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Benefits of Optical Chips</h3>
+        <ul>
+          <li><b>Much Faster Processing</b> – Light moves faster than electricity, allowing higher speeds.</li>
+          <li><b>Lower Energy Use</b> – Less heat, making computers energy-efficient.</li>
+          <li><b>Better Data Transfer</b> – High-speed connections improve internet and AI.</li>
+          <li><b>Multitasking Made Easier</b> – Handle complex tasks simultaneously.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Uses -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Applications</h3>
+        <ul>
+          <li>AI & Machine Learning – faster computing power.</li>
+          <li>Healthcare – advanced imaging & diagnostic tools.</li>
+          <li>Satellites & Security – high-speed secure operations.</li>
+          <li>Networking – enable ultra-fast networks like 6G.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Challenges</h3>
+        <ul>
+          <li>Difficult to Build – new manufacturing methods required.</li>
+          <li>Expensive to Develop – high research and production costs.</li>
+          <li>Material Issues – finding affordable effective materials.</li>
+          <li>Integration – hard to combine with current tech.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Future -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Will Photonic Computing Become Common?</h3>
+        <ul>
+          <li><b>Ongoing Research</b> – Universities & companies improving chip designs.</li>
+          <li><b>Industry Interest</b> – Intel, IBM, and startups like Lightmatter are exploring.</li>
+          <li><b>Expected Timeline</b> – Could become common within 10 years.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Competing Tech -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Competing Technologies</h3>
+        <ul>
+          <li><b>Traditional Chips</b> – Continued development keeps them relevant.</li>
+          <li><b>Optical Chips</b> – May replace processors in many areas.</li>
+          <li><b>Quantum Computing</b> – Could work alongside photonics for extreme performance.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Conclusion</h3>
+        <p>Photonic computing has the potential to revolutionize technology with faster and more efficient processing. While challenges exist, ongoing research is pushing boundaries daily—bringing us closer to the era of light-powered computers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3" style="background:#145a32;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

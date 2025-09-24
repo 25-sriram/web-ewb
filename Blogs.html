@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EWB-SVCE | Blogs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Banner */
+    .blogs-hero {
+      background:url("static/images/blogbanner1.jpg") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+    .blogs-hero h1 {
+      color :rgb(255, 255, 255);
+      font-size: 5.5rem;
+      font-weight: bold;
+      animation: slideInFromLeft 1s ease-out;
+    }
+
+    /* Blog Cards */
+    .blog-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+    .blog-card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .blog-card img {
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .blog-card:hover img {
+      transform: scale(1.05);
+    }
+    .blog-card .card-body {
+      padding: 25px;
+    }
+    .blog-card h5 {
+      color: #1e8449;
+      font-weight: bold;
+    }
+
+    /* Hover Glow Effect */
+    .blog-card:hover {
+      box-shadow: 0 0 25px rgba(30,132,73,0.3);
+    }
+
+    /* Buttons */
+    .btn-green {
+      background-color: #1e8449;
+      color: #fff;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-green:hover {
+      background-color: #145a32;
+      transform: translateY(-2px);
+    }
+    /* Navbar Font Styling */
+    .custom-navbar,
+    .custom-navbar .nav-link,
+    .custom-navbar .dropdown-menu,
+    .custom-navbar .navbar-brand {
+      font-family: 'Poppins', sans-serif !important;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-nav .nav-link.active,
+    .navbar-nav .dropdown-item.active {
+      background-color: #0b3d2e !important;  /* dark green */
+      color: #fff !important;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+    /* Blog Card Equal Height Fix */
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card-body {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Force consistent height on mobile */
+    @media (max-width: 768px) {
+      .card {
+        min-height: 400px;
+      }
+    }
+
+    /* Floating Buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 2000;
+    }
+    .floating-buttons a {
+      background: #1e8449;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .floating-buttons a:hover {
+      transform: scale(1.1);
+      background: #145a32;
+    }
+
+    /* Animations */
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+ <link rel="stylesheet" href="static/css/navbar1.css">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary-blue custom-navbar">
+  <div class="container-fluid">
+    <!-- Left Logo -->
+    <a class="navbar-brand p-0 me-2" href="index.html">
+      <img src="static/images/ewb_logo.png" alt="EWB Logo">
+    </a>
+
+    <!-- SVCE Logo for Mobile -->
+    <a class="navbar-brand p-0 ms-auto d-lg-none" href="#">
+      <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo" style="height:50px;">
+    </a>
+
+    <!-- Hamburger Icon -->
+    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Projects.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="obs.html">Office Bearers</a></li>
+        <li class="nav-item"><a class="nav-link" href="Blogs.html">Blogs</a></li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Events</a>
+          <ul class="dropdown-menu transparent-dropdown">
+            <li><a class="dropdown-item" href="gallery.html">2025 - 2026</a></li>
+            <li><a class="dropdown-item" href="event1.html">2024 - 2025</a></li>
+            <li><a class="dropdown-item" href="event2.html">2023 - 2024</a></li>
+            <li><a class="dropdown-item" href="event3.html">2022 - 2023</a></li>
+            <li><a class="dropdown-item" href="event4.html">2021 - 2022</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- Right Logo (Desktop) -->
+      <a class="navbar-brand p-0 ms-3 d-none d-lg-block" href="#">
+        <img src="static/images/svcelogo.png" alt="SVCE Logo" class="svce-logo">
+      </a>
+    </div>
+  </div>
+</nav>
+<script>
+  // Function to toggle the navbar
+  function toggleNavbar() {
+    const navbar = document.getElementById('navbarNav');
+    const isExpanded = navbar.classList.contains('show');
+    
+    // Toggle the class 'show' to open/close the navbar
+    if (isExpanded) {
+      navbar.classList.remove('show');
+    } else {
+      navbar.classList.add('show');
+    }
+  }
+</script>
+  <!-- Hero Section -->
+  <section class="blogs-hero">
+    <div class="container">
+      <h1>Blogs</h1>
+    </div>
+  </section>
+
+  <!-- Blog Cards -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+        
+
+
+        <!-- Blog Post 1 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/planetbanner.png" alt="Planets">
+            <div class="card-body">
+              <h5 class="card-title">The Wildest Planets</h5>
+              <p class="card-text">Strangest Worlds in the Milky Way</p>
+              <p class="text-muted mb-2">Published on: June 6, 2025</p>
+              <a href="planets.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 2 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/sbanner.png" alt="Firesat">
+            <div class="card-body">
+              <h5 class="card-title">Firesat</h5>
+              <p class="card-text">The Fire-Watching Eyes in the Sky</p>
+              <p class="text-muted mb-2">Published on: April 28, 2025</p>
+              <a href="firesat.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 3 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/ebanner.png" alt="Electricity">
+            <div class="card-body">
+              <h5 class="card-title">Electricity from Thin Air</h5>
+              <p class="card-text">UMass Amherst's Groundbreaking Discovery</p>
+              <p class="text-muted mb-2">Published on: April 23, 2025</p>
+              <a href="electricity.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 4 -->
+
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/bhbanner.png" alt="Black Holes">
+            <div class="card-body">
+              <h5 class="card-title">Black Holes</h5>
+              <p class="card-text">The Mysterious Giants of Space</p>
+              <p class="text-muted mb-2">Published on: April 15, 2025</p>
+              <a href="blackholes.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Blog Post 5 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/pbanner.png" alt="Photonic">
+            <div class="card-body">
+              <h5 class="card-title">Photonic Computing & Optical Chips</h5>
+              <p class="card-text">The Future of Faster, Greener Computers</p>
+              <p class="text-muted mb-2">Published on: March 23, 2025</p>
+              <a href="photonic.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Post 6 -->
+
+
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/mibanner.png" alt="Mi Air">
+            <div class="card-body">
+              <h5 class="card-title">Mi Air Charge</h5>
+              <p class="card-text">The future of wireless charging</p>
+              <p class="text-muted mb-2">Published on: March 6, 2025</p>
+              <a href="mi.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Blog Post 7 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/nanobanner.png" alt="Nanotech">
+            <div class="card-body">
+              <h5 class="card-title">Nanotechnology</h5>
+              <p class="card-text">Revolutionizing Industries and Shaping the Future</p>
+              <p class="text-muted mb-2">Published on: March 1, 2025</p>
+              <a href="nanotech.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Blog Post 8 -->
+        <div class="col-md-4">
+          <div class="card blog-card">
+            <img src="static/images/pybanner.png" alt="Pyramids">
+            <div class="card-body">
+              <h5 class="card-title">The Pyramids of Egypt</h5>
+              <p class="card-text">Discover the mysteries, purpose, and legacy of the pyramids.</p>
+              <p class="text-muted mb-2"> Published on: February 20, 2025</p>
+              <a href="pyramid.html" class="btn btn-green btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Quick Access Buttons -->
+  <div class="floating-buttons">
+    <a href="#"><i class="bi bi-arrow-up"></i></a>
+    <a href="contact.html"><i class="bi bi-envelope"></i></a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary-blue text-white text-center p-3">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Reveal animation on scroll
+    const cards = document.querySelectorAll('.blog-card');
+    const revealOnScroll = () => {
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          card.classList.add('show');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+
+    // Clear all existing actives
+    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+      .forEach(a => a.classList.remove('active'));
+
+    // Mark exact-match nav link or dropdown item
+    document.querySelectorAll('.navbar .nav-link, .dropdown-menu .dropdown-item')
+      .forEach(a => {
+        const href = (a.getAttribute('href') || '').split('/').pop().toLowerCase();
+        if (href && href === path) a.classList.add('active');
+      });
+
+    // If on any events page, also light up the Events toggle
+    const eventPages = [
+      'gallery.html','event1.html','event2.html','event3.html','event4.html',
+      'pastyear.html','pastyear2.html'
+    ];
+    if (eventPages.includes(path)) {
+      const eventsToggle = document.getElementById('eventsDropdown');
+      if (eventsToggle) eventsToggle.classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>

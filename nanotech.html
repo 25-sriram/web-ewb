@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nanotechnology Blog | EWB-SVCE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      background: #f9fdf9;
+      overflow-x: hidden;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("static/images/nanobanner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      animation: fadeInDown 1s ease;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Back Button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(20, 90, 50, 0.85);
+      color: white;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: background 0.3s ease;
+      z-index: 1000;
+    }
+    .back-btn:hover {
+      background: #0d3d24;
+    }
+
+    /* Blog Sections */
+    .blog-section {
+      margin: 60px 0;
+    }
+    .blog-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,128,0,0.25);
+    }
+    .blog-card h3 {
+      color: #1e8449;
+      margin-bottom: 15px;
+    }
+    .blog-card ul {
+      padding-left: 18px;
+    }
+    .blog-card li {
+      margin-bottom: 8px;
+    }
+    .blog-img {
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .blog-card { padding: 20px; }
+      .blog-img { max-height: 160px; }
+      .back-btn { width: 40px; height: 40px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <!-- Back button -->
+    <a href="blogs.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i>
+    </a>
+    <h1>Nanotechnology</h1>
+    <p class="lead">Revolutionizing Industries and Shaping the Future</p>
+  </section>
+
+  <!-- Blog Content -->
+  <div class="container">
+
+    <!-- Introduction -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Introduction</h3>
+        <ul>
+          <li><b>Nanotechnology</b> manipulates matter at an atomic scale (1–100 nm) and is revolutionizing industries.</li>
+          <li>The <b>global nanotech market</b>, valued at $85B in 2022, is expected to reach $288B by 2030, growing at <b>16.8% CAGR</b>.</li>
+        </ul>
+        <img src="static/images/nintro.png" class="img-fluid blog-img" alt="Nanotech Introduction">
+      </div>
+    </div>
+
+    <!-- Medicine -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Nanotechnology in Medicine</h3>
+        <ul>
+          <li><b>Targeted Drug Delivery</b>: Nanoparticles enhance drug efficiency by 40–60%.</li>
+          <li><b>Nano-robots in Surgery</b>: By 2035, precision surgeries & tissue repair will be revolutionized.</li>
+          <li><b>Cancer Treatment</b>: Nanoparticle-based chemotherapy improves patient outcomes by 30%.</li>
+          <li><b>Regenerative Medicine</b>: Nanotech scaffolds aid tissue repair, reducing transplant dependence.</li>
+        </ul>
+        <img src="static/images/nmedicine.png" class="img-fluid blog-img" alt="Nanotech Medicine">
+      </div>
+    </div>
+
+    <!-- Electronics -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Nanotechnology in Electronics</h3>
+        <ul>
+          <li><b>Semiconductor Growth</b>: Projected to reach $1T by 2030.</li>
+          <li><b>Graphene & Nanotubes</b>: 100x faster than silicon, boosting AI & computing.</li>
+          <li><b>Quantum Dot Displays</b>: 30% less energy, last 2x longer than LEDs.</li>
+          <li><b>Wearable Tech</b>: Enables flexible screens & ultra-thin batteries.</li>
+        </ul>
+        <img src="static/images/nelectronics.png" class="img-fluid blog-img" alt="Nanotech Electronics">
+      </div>
+    </div>
+
+    <!-- Environment -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Nanotechnology & The Environment</h3>
+        <ul>
+          <li><b>Water & Air Purification</b>: Removes 99.9% contaminants.</li>
+          <li><b>Pollution Control</b>: Cuts CO₂ emissions by 30%, nanosponges clean spills 5x faster.</li>
+          <li><b>Renewable Energy</b>: Solar efficiency ↑ by 20–25% due to nanotech.</li>
+        </ul>
+        <img src="static/images/nenvironment.png" class="img-fluid blog-img" alt="Nanotech Environment">
+      </div>
+    </div>
+
+    <!-- Space -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Nanotechnology in Space Exploration</h3>
+        <ul>
+          <li><b>Stronger Materials</b>: Spacecraft 35% lighter, reducing launch costs.</li>
+          <li><b>Self-Healing Coatings</b>: Extend spacecraft lifespan.</li>
+          <li><b>Radiation Protection</b>: Blocks 70% of harmful space radiation.</li>
+          <li><b>Deep Space Travel</b>: By 2040, nanotech aids Mars colonization.</li>
+        </ul>
+        <img src="static/images/nano_space.png" class="img-fluid blog-img" alt="Nanotech Space">
+      </div>
+    </div>
+
+    <!-- Challenges -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Challenges Facing Nanotechnology</h3>
+        <ul>
+          <li><b>Health & Safety</b>: 80% nanomaterials remain unregulated.</li>
+          <li><b>Environmental Impact</b>: Improper disposal threatens ecosystems.</li>
+          <li><b>Ethical Issues</b>: Raises privacy & AI concerns.</li>
+          <li><b>High Costs</b>: Some exceed $1000 per gram, limiting accessibility.</li>
+        </ul>
+        <img src="static/images/nchallenges.png" class="img-fluid blog-img" alt="Nanotech Challenges">
+      </div>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="blog-section reveal">
+      <div class="blog-card">
+        <h3>Conclusion</h3>
+        <p><b>Economic & Scientific Impact</b>: Nanotech projected to exceed $280B by 2030, driving advancements.</p>
+        <p><b>Ethical Responsibility</b>: Regulations & sustainable practices ensure safe innovation.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-3" style="background:#145a32;color:white;">
+    © 2025 Engineers Without Borders - SVCE Student Chapter
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll reveal animation
+    const reveals = document.querySelectorAll('.reveal');
+    window.addEventListener('scroll', () => {
+      for (let r of reveals) {
+        const rect = r.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          r.classList.add('active');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
