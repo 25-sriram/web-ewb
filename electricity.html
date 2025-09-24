@@ -115,7 +115,7 @@
   <!-- Hero -->
   <section class="hero">
     <!-- Back button -->
-    <a href="blogs.html" class="back-btn">
+    <a href="/Blogs.html" class="back-btn">
       <i class="bi bi-arrow-left"></i>
     </a>
     <h1>Electricity from Thin Air</h1>
@@ -126,7 +126,7 @@
   <div class="container">
 
     <!-- Intro -->
-    <div class="blog-section reveal">
+    <div class="blog-section reveal active">
       <div class="blog-card">
         <h3>What If the Air Around Us Could Power Our Devices?</h3>
         <p>Imagine a world where the air itself could charge our phones, laptops, and gadgets. That’s the vision behind UMass Amherst’s discovery of electricity from humidity.</p>
@@ -192,17 +192,21 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
+   <script>
     // Scroll reveal animation
-    const reveals = document.querySelectorAll('.reveal');
-    window.addEventListener('scroll', () => {
-      for (let r of reveals) {
-        const rect = r.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          r.classList.add('active');
-        }
+// Scroll reveal animation (skip already active sections)
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', () => {
+  for (let r of reveals) {
+    if (!r.classList.contains('active')) { // don't re-trigger
+      const rect = r.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        r.classList.add('active');
       }
-    });
+    }
+  }
+});
+
   </script>
 </body>
 </html>
